@@ -2,9 +2,9 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>MeiTuan</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -15,27 +15,24 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="meiTuanApp">
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">meiTuan</h3>
-      </div>
 
-      <div ng-view=""></div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+      <!-- 定义容器元素 -->
+      <div id="MeiTuanStart">
+        <!-- 第一步 定义组件自定义元素 -->
+        <!-- 三个页面，创建三个自定义元素 -->
+        <!-- <home></home>
+        <list></list>
+        <detail></detail> -->
+        <!-- 通过component渲染多个元素 -->
+        <component v-bind:is="view"></component>
+      </div>   
     </div>
 
 
@@ -72,8 +69,13 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
+        <!-- <script src="scripts/app.js"></script> -->
+        <!-- <script src="scripts/controllers/main.js"></script> -->
         <!-- endbuild -->
+
+        <!-- my .js -->
+
+        <script src="bower_components/vue/dist/vue.js"></script>
+        <script src="scripts/index.js"></script>
 </body>
 </html>
